@@ -2,7 +2,7 @@ from heapq import heappush, heappop
 from pathlib import Path
 import requests
 
-with open('sessioncookie.txt') as f:
+with open('cookies.txt') as f:
     SESSION_COOKIE = f.read().strip()
 
 
@@ -14,7 +14,7 @@ def get_input(day, as_list=True):
 
     if not filepath.is_file():
         print(f'Fetching input file for day {day} from AdventOfCode.com...')
-        response = requests.get(f'https://adventofcode.com/2021/day/{day}/input',
+        response = requests.get(f'https://adventofcode.com/2022/day/{day}/input',
                             cookies={'session': SESSION_COOKIE})
         if response.ok:
             with open(filepath, 'w') as ipt_file:

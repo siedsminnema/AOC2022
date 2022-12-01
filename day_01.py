@@ -1,19 +1,17 @@
-with open('input_1.txt') as f:
-    data = f.read()
-    input_list = [i for i in data.split("\n")]
+from input import get_input
 
+input = get_input(1)
 amount = 0
 totals = []
 
-for c in input_list:
-    try:
-        amount += int(c)
-    except:
-        totals.append(amount)
-        amount = 0
+def sorted_list(list):
+    for c in input:
+        if c:
+            amount = int(c)
+        else:
+            totals.append(amount)
+            amount = 0
+    return sorted(totals, reverse=True)
 
-st = sorted(totals, reverse=True)
-result1 = (st[0])
-result2 = (st[0] + st[1] + st[2])
-
-print(result1, result2)
+sl = sorted_list(input)
+print(sl[0], sum(sl[0:3]))
