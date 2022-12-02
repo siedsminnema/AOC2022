@@ -15,9 +15,7 @@ base_score2 = dict.fromkeys(['A X', 'C Y', 'B Z'], 3) | \
 
 # calculate totals
 for g in input:
-    score1 += base_score[g[2]]
-    score1 += result_score[g]
-    score2 += base_score2[g]
-    score2 += result_score2[g[2]]
+    score1 += base_score[g[2]] + result_score[g]
+    score2 += base_score2[g] + result_score2[g[2]]
 
 print (score1, score2)
