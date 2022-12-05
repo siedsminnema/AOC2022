@@ -17,11 +17,8 @@ def build_dict(input):
 
 
 def move_blocks(s, input, CM9001=True):
-    for i, r in enumerate(input):
-
-        if i < 10:
-            continue
-        else:
+    for r in input:
+        if 'move' in r:
             amount = int((r.split(' from')[0].split('move ')[1]))
             dep = int((r.split('from ')[1].split(' to')[0]))
             arr = int((r.split(' to')[1]))
@@ -40,8 +37,4 @@ s1, s2 = build_dict(input), build_dict(input)
 s1 = move_blocks(s1, input, CM9001=False)
 s2 = move_blocks(s2, input, CM9001=True)
 
-for item in s1:
-    print(s1[item][-2])
-
-for item in s2:
-    print("".join([s2[item][-2]]))
+print(''.join([s1[item][-2] for item in s1]), ''.join([s2[item][-2] for item in s2]))
