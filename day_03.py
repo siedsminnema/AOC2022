@@ -6,9 +6,8 @@ letters2 = []
 
 for s in input:
     half = len(s)/2
-    s1, s2 = [], []
-    s1 = [j  for i,j in enumerate(s) if i < half]
-    s2 = [j  for i,j in enumerate(s) if i >= half]
+    s1 = [j for i, j in enumerate(s) if i < half]
+    s2 = [j for i, j in enumerate(s) if i >= half]
     for i in s1:
         if i in s2:
             letters.append(i)
