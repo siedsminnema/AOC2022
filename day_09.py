@@ -60,7 +60,6 @@ tracking = defaultdict(int)
 tracking2 = defaultdict(int)
 d = dict.fromkeys(range(0, 10), (0,0))
 x, y = 0, 0
-xt, yt = 0, 0
 
 for i, m in enumerate(input):
     for t in range(int(m.split()[1])):
