@@ -28,11 +28,10 @@ for i, c in enumerate(input):
 
 
 def draw_pixel(CRT_pos, stride_pos):
-    pixel = ''
     if stride_pos <= CRT_pos <= stride_pos + 2:
-        pixel += '#'
+        pixel = '#'
     else:
-        pixel += '.'
+        pixel = '.'
     return pixel
 
 
