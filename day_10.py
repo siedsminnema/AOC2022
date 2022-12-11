@@ -1,5 +1,3 @@
-from collections import defaultdict
-
 from input import get_input
 
 input = get_input(10)
