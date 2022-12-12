@@ -17,7 +17,6 @@ for i, j in enumerate(input):
 
 
 def throwing(md, rounds, bored = True):
-    print(md)
     inspections = defaultdict(int)
     lcm = math.lcm(*[md[monkey]["test"] for monkey in md])
     for _ in range(rounds):
@@ -26,8 +25,7 @@ def throwing(md, rounds, bored = True):
                 new = eval(md[monkey]['operation'])
                 if bored:
                     new = int(new / 3)
-                else:
-                    new = new % lcm
+                new = new % lcm
                 if new % md[monkey]['test'] == 0:
                     to_monkey = md[monkey]['iftrue']
                 else:
@@ -36,6 +34,7 @@ def throwing(md, rounds, bored = True):
                 inspections[monkey] += 1
             md[monkey]['items'] = []
     return inspections
+
 
 monkeys2 = copy.deepcopy(monkeys)
 i1 = throwing(monkeys, 20)
