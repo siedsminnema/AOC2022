@@ -33,12 +33,11 @@ def find_shortest_path(possibilities, starting_point, ending_point):
 
     parent = {starting_point: None}
     dist = {starting_point: 0}
+    q = deque()
+    q.append(starting_point)
 
-    queue = deque()
-    queue.append(starting_point)
-
-    while queue:
-        u = queue.popleft()
+    while q:
+        u = q.popleft()
         for n in possibilities[u]:
             if n not in dist:
                 parent[n] = u
